@@ -21,6 +21,11 @@
       :class="['cv', 'bg-white', { blur: isLoading }]"
     >
       <div class="cv__side w-1/3">
+
+        <img v-if="formSettings.image"
+             style="max-height: 200px; max-width: 200px;margin: -20px auto 5px auto;"
+             :src="`${formSettings.image}`"
+        />
         <h2 class="cv__name">
           {{ formSettings.name }} {{ formSettings.lastName }}
         </h2>

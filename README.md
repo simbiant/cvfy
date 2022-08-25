@@ -26,7 +26,7 @@ Demo: https://cvfy.xyz/
 # install dependencies
 $ yarn
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at localhost:8099
 $ yarn dev
 
 # build for production and launch server

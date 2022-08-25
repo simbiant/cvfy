@@ -3,7 +3,7 @@ export default {
   target: 'static',
 
   server: {
-    port: 3000, // default: 3000
+    port: 8099, // default: 8099
   },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -40,7 +40,7 @@ export default {
       },
     ],
     htmlAttrs: {
-      lang: 'es',
+      lang: 'uk',
     },
   },
 
@@ -87,19 +87,19 @@ export default {
     strategy: 'prefix',
     locales: [
       {
+        code: 'uk',
+        file: 'uk.js',
+        name: 'Українська',
+      },
+      {
         code: 'en',
         file: 'en.js',
         name: 'English',
       },
-      {
-        code: 'es',
-        file: 'es.js',
-        name: 'Español',
-      },
     ],
     lazy: true,
     langDir: 'lang/',
-    defaultLocale: 'en',
+    defaultLocale: 'uk',
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',

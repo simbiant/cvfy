@@ -19,6 +19,7 @@ export interface Cv {
   displayEducation: boolean;
   displayProjects: boolean;
   activeColor: string;
+  image: string | ArrayBuffer | null;
 }
 export interface CvEvent {
   title: string;

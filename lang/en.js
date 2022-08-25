@@ -1,5 +1,6 @@
 export default {
   'es-name': 'Spanish',
+  'uk-name': 'Ukrainian',
   'en-name': 'English',
   'about-me': 'About me',
   experience: 'Experience',
@@ -25,7 +26,6 @@ export default {
   'upload-cv': 'Upload CV settings',
   'download-cv-settings': 'Download CV settings',
   'download-cv-pdf': 'Download your CV as PDF',
-  'chrome-recommended': 'Firefox recommended for ATSs',
   'job-title': 'Job Title / Current Position',
   'first-name': 'First name',
   'last-name': 'Last name',
@@ -41,7 +41,7 @@ export default {
   work: 'work',
   'clear-settings': 'Clear CV settings',
   description:
-    'With CvFy you can create, preview and save your CV as PDF easily and for free! Available in English and Spanish. Built with Nuxt.',
-  'title-tag': 'CvFy - Create your CV as PDF in a few minutes!',
+    'With Inco.works you can create, preview and save your CV as PDF easily and for free! Available in English and Ukrainian. Built with Nuxt.',
+  'title-tag': 'Inco.works - Create your CV as PDF in a few minutes!',
   projects: 'projects',
 };

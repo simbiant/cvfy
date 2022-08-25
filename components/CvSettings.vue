@@ -4,21 +4,6 @@
       <span class="title__text">
         {{ $t('cv-settings') }}
       </span>
-      <a
-        class="buy-me-a-coffee"
-        href="https://ko-fi.com/X8X4COWK0"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Buy me a coffee"
-      >
-        <img
-          class="buy-me-a-coffee__image"
-          src="https://cdn.ko-fi.com/cdn/kofi5.png?v=3"
-          width="118px"
-          height="30px"
-          alt="Buy me a coffee button"
-        />
-      </a>
     </h2>
     <form class="form mb-10" autocomplete="on">
       <div class="form__section px-6 py-3">
@@ -80,6 +65,18 @@
       </fieldset>
       <!-- COLOR THEME -->
 
+      <div class="form__section px-6 py-3">
+        <label class="form__btn form__btn--ghost" for="image-avatar">{{
+          $t('upload-image')
+        }}</label>
+        <input
+          id="image-avatar"
+          style="visibility: hidden"
+          type="file"
+          accept="image/*"
+          @change="uploadImage"
+        />
+      </div>
       <!-- PERSONAL DETAILS -->
       <fieldset class="form__section">
         <expansion-panel :panel-name="$t('personal-details')">
@@ -343,6 +340,13 @@
 
       <!-- CTA -->
       <div class="form__section flex flex-col p-6 gap-3">
+        <button
+          type="button"
+          class="form__btn flex flex-col justify-center"
+          @click="downloadPdf"
+        >
+          <span>{{ $t('download-cv-pdf') }}</span>
+        </button>
         <label tabindex="0" class="form__btn flex justify-center">
           {{ $t('upload-cv') }} (JSON)
           <input
@@ -360,14 +364,6 @@
           class="form__btn flex justify-center"
           >{{ $t('download-cv-settings') }} (JSON)</a
         >
-        <button
-          type="button"
-          class="form__btn flex flex-col justify-center"
-          @click="downloadPdf"
-        >
-          <span>{{ $t('download-cv-pdf') }}</span>
-          <span>({{ $t('chrome-recommended') }})</span>
-        </button>
       </div>
       <!-- CTA -->
     </form>
@@ -405,12 +401,13 @@ export default Vue.extend({
         { name: 'black', color: '#1F2937', darker: '#111827' },
       ],
       languages: [
-        { name: 'es-name', code: 'es' },
+        { name: 'uk-name', code: 'uk' },
         { name: 'en-name', code: 'en' },
       ],
     };
 
-    const { formSettings, uploadCV, resetForm, setUpCvSettings } = useCvState();
+    const { formSettings, uploadCV, resetForm, setUpCvSettings, uploadImage } =
+      useCvState();
     const context = useContext();
 
     onMounted(setUpCvSettings);
@@ -474,6 +471,7 @@ export default Vue.extend({
       availableLocales,
       uploadCV,
       resetForm,
+      uploadImage,
     };
   },
 });

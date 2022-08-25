@@ -131,6 +131,25 @@ export function useCvState() {
     localStorage.removeItem('cvSettings-es');
     localStorage.removeItem('cvSettings-en');
   }
+  function uploadImage(e: any): void {
+    const files = e.target.files || e.dataTransfer.files;
+    if (!files.length) {
+      return;
+    }
+    if (files[0].size > 3576584) {
+      alert('Image must be less then 3mb');
+      return;
+    }
+
+    const reader = new FileReader();
+
+    let rawImg;
+    reader.onloadend = () => {
+      rawImg = reader.result;
+      state.formSettings.image = rawImg;
+    };
+    reader.readAsDataURL(files[0]);
+  }
 
   function changeDisplaySection(e: {
     sectionName: string;
@@ -154,5 +173,6 @@ export function useCvState() {
     uploadCV,
     resetForm,
     changeDisplaySection,
+    uploadImage
   };
 }
