@@ -11,7 +11,7 @@ export default {
   languages: 'Мови',
   current: 'Поточно',
   'cv-language': 'Мова CV',
-  'cv-settings': 'Правка CV',
+  'cv-settings': 'Налаштування CV',
   'color-theme': 'Колір теми',
   pink: 'рожевий',
   purple: 'фіолетовий',
@@ -42,7 +42,9 @@ export default {
   'clear-settings': 'Очистити приклад CV ',
   description:
     'За допомогою Inco.works ви можете легко і безкоштовно створювати, переглядати і зберігати своє резюме в форматі PDF! Доступно англійською та українською мовами. Створено за допомогою Nuxt',
-  'title-tag': 'Inco.works - Створіть своє резюме у форматі PDF за кілька хвилин!',
+  'title-tag':
+    'Inco.works - Створіть своє резюме у форматі PDF за кілька хвилин!',
   projects: 'проекти',
   'upload-image': 'Завантажити зображення',
+  image: 'Зображення',
 };

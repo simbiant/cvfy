@@ -66,9 +66,21 @@
       <!-- COLOR THEME -->
 
       <div class="form__section px-6 py-3">
-        <label class="form__btn form__btn--ghost" for="image-avatar">{{
-          $t('upload-image')
-        }}</label>
+        <legend class="form__legend">{{ $t('image') }}</legend>
+        <div style="display: flex; align-items: center">
+          <label class="form__btn form__btn--ghost" for="image-avatar">
+            {{ $t('upload-image') }}
+          </label>
+          <button
+            v-if="formSettings.image"
+            class="form__btn form__btn--ghost"
+            style="width: 40px; height: 40px; color: red"
+            type="button"
+            @click="removeImage"
+          >
+            X
+          </button>
+        </div>
         <input
           id="image-avatar"
           style="visibility: hidden"
@@ -77,6 +89,7 @@
           @change="uploadImage"
         />
       </div>
+
       <!-- PERSONAL DETAILS -->
       <fieldset class="form__section">
         <expansion-panel :panel-name="$t('personal-details')">
@@ -406,8 +419,14 @@ export default Vue.extend({
       ],
     };
 
-    const { formSettings, uploadCV, resetForm, setUpCvSettings, uploadImage } =
-      useCvState();
+    const {
+      formSettings,
+      uploadCV,
+      resetForm,
+      setUpCvSettings,
+      uploadImage,
+      removeImage,
+    } = useCvState();
     const context = useContext();
 
     onMounted(setUpCvSettings);
@@ -472,6 +491,7 @@ export default Vue.extend({
       uploadCV,
       resetForm,
       uploadImage,
+      removeImage,
     };
   },
 });

@@ -150,6 +150,9 @@ export function useCvState() {
     };
     reader.readAsDataURL(files[0]);
   }
+  function removeImage(): void {
+    state.formSettings.image = '';
+  }
 
   function changeDisplaySection(e: {
     sectionName: string;
@@ -173,6 +176,7 @@ export function useCvState() {
     uploadCV,
     resetForm,
     changeDisplaySection,
-    uploadImage
+    uploadImage,
+    removeImage,
   };
 }

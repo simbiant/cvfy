@@ -44,4 +44,6 @@ export default {
     'With Inco.works you can create, preview and save your CV as PDF easily and for free! Available in English and Ukrainian. Built with Nuxt.',
   'title-tag': 'Inco.works - Create your CV as PDF in a few minutes!',
   projects: 'projects',
+  'upload-image': 'Upload image',
+  image: 'Image',
 };

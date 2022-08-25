@@ -1,30 +1,19 @@
 <template>
   <div id="cv" class="font-normal relative flex justify-center w-full bg-white">
     <div
-      id="credit"
-      class="p-3 text-gray-700 absolute bottom-0 text-center w-full text-xs"
-    >
-      Made with ♥️ by
-      <a
-        class="underline"
-        :style="{ color: 'var(--primary)' }"
-        href="https://github.com/claudiabdm"
-        rel="noopener"
-        target="_blank"
-        >claudiabdm</a
-      >
-      using <b>Nuxt.js</b> + <b>TailwindCSS</b>
-    </div>
-    <div
       tabindex="0"
       aria-label="CV preview"
       :class="['cv', 'bg-white', { blur: isLoading }]"
     >
       <div class="cv__side w-1/3">
-
-        <img v-if="formSettings.image"
-             style="max-height: 200px; max-width: 200px;margin: -20px auto 5px auto;"
-             :src="`${formSettings.image}`"
+        <img
+          v-if="formSettings.image"
+          style="
+            max-height: 200px;
+            max-width: 200px;
+            margin: -20px auto 5px auto;
+          "
+          :src="`${formSettings.image}`"
         />
         <h2 class="cv__name">
           {{ formSettings.name }} {{ formSettings.lastName }}
