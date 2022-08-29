@@ -8,7 +8,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: defaultTheme.colors.purple,
+        primary: defaultTheme.colors.blue,
       },
     },
     future: {

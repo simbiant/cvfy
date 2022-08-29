@@ -222,7 +222,7 @@
       <fieldset class="form__section grid gap-3">
         <expansion-panel :panel-name="'Social'">
           <template v-slot:title>
-            <legend class="form__legend">Social</legend>
+            <legend class="form__legend">{{$t('social')}}</legend>
           </template>
           <template v-slot:content>
             <div class="grid grid-cols-2 gap-x-3 gap-y-10">
@@ -407,9 +407,9 @@ export default Vue.extend({
   setup() {
     const config = {
       colors: [
+        { name: 'blue', color: '#1E40AF', darker: '#1E3A8A' },
         { name: 'pink', color: '#9D174D', darker: '#831843' },
         { name: 'purple', color: '#5B21B6', darker: '#4C1D95' },
-        { name: 'blue', color: '#1E40AF', darker: '#1E3A8A' },
         { name: 'green', color: '#065F46', darker: '#064E3B' },
         { name: 'black', color: '#1F2937', darker: '#111827' },
       ],

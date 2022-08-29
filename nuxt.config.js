@@ -111,7 +111,7 @@ export default {
   },
   pwa: {
     meta: {
-      theme_color: '#5B21B6',
+      theme_color: '#1E40AF',
     },
   },
 };

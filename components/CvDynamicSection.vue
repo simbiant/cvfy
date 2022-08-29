@@ -36,7 +36,10 @@
                   <template v-if="sectionName === 'education'">🎓</template>
                   <template v-else-if="sectionName === 'projects'">✨</template>
                   <template v-else>💼</template>
-                  {{ $t('title') }}
+                  <span v-if="sectionName === 'education'">{{
+                    $t('title-specialization')
+                  }}</span>
+                  <span v-else>{{ $t('title') }}</span>
                 </label>
                 <input
                   :id="`entryTitle--${entry.title}`"
@@ -46,7 +49,16 @@
                 />
               </div>
               <div class="form__group col-span-full">
-                <label class="form__label" :for="`entryLocation-${entry.title}`"
+                <label
+                  v-if="sectionName === 'education'"
+                  class="form__label"
+                  :for="`entryLocation-${entry.title}`"
+                  >📍 {{ $t('location-education') }}</label
+                >
+                <label
+                  v-else
+                  class="form__label"
+                  :for="`entryLocation-${entry.title}`"
                   >📍 {{ $t('location') }}</label
                 >
                 <input
@@ -73,7 +85,18 @@
                   :for="`entryTo-${entry.title}`"
                 >
                   📆 {{ $t('to') }}
-                  <label class="form__label flex items-center">
+                  <label
+                    v-if="sectionName === 'education'"
+                    class="form__label flex items-center"
+                  >
+                    <input
+                      v-model="entry.current"
+                      class="form__control form__control--checkbox"
+                      type="checkbox"
+                    />
+                    {{ $t('current-education') }}
+                  </label>
+                  <label v-else class="form__label flex items-center">
                     <input
                       v-model="entry.current"
                       class="form__control form__control--checkbox"
@@ -91,7 +114,16 @@
                 />
               </div>
               <div class="form__group col-span-full">
-                <label class="form__label" :for="`entrySummary-${entry.title}`"
+                <label
+                  v-if="sectionName === 'education'"
+                  class="form__label"
+                  :for="`entrySummary-${entry.title}`"
+                  >📝 {{ $t('summary-education') }}</label
+                >
+                <label
+                  v-else
+                  class="form__label"
+                  :for="`entrySummary-${entry.title}`"
                   >📝 {{ $t('summary') }}</label
                 >
                 <textarea

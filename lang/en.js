@@ -46,4 +46,10 @@ export default {
   projects: 'projects',
   'upload-image': 'Upload image',
   image: 'Image',
+  social: 'Social',
+  'display-section': 'Display section on CV',
+  'current-education1': 'current',
+  'title-specialization': 'Specialization',
+  'location-education': 'Educational institution',
+  'summary-education': 'Summary',
 };
